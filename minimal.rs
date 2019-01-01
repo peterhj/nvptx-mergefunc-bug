@@ -1,11 +1,11 @@
 #![crate_type = "lib"]
 
 #![feature(abi_ptx)]
+#![feature(lang_items)]
 #![feature(link_llvm_intrinsics)]
 #![feature(naked_functions)]
-
-#![feature(lang_items)]
 #![feature(no_core)]
+
 #![no_core]
 
 #[lang = "sized"]
@@ -27,10 +27,12 @@ pub unsafe fn _thread_idx_x() -> i32 {
 
 #[no_mangle]
 pub unsafe extern "ptx-kernel" fn foo() {
-  let _ = _thread_idx_x();
+  let p: *mut i32 = 4096 as *mut i32;
+  *p = _thread_idx_x();
 }
 
 #[no_mangle]
 pub unsafe extern "ptx-kernel" fn bar() {
-  let _ = _thread_idx_x();
+  let p: *mut i32 = 4096 as *mut i32;
+  *p = _thread_idx_x();
 }
