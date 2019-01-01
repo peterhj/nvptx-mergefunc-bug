@@ -21,7 +21,7 @@ successfully generate a PTX file. However the correctness of the PTX is not
 guaranteed!
 
 Running `ptxas -arch sm_35 -o nocore-bad.o nocore-mergefunc-nousealiases-bad.ptx` yields the
-following error:
+following error (I am using `ptxas` from CUDA 9.2):
 
     ptxas ./nocore-mergefunc-nousealiases-bad.ptx, line 38; error   : Illegal call target, device function expected
     ptxas fatal   : Ptx assembly aborted due to errors
