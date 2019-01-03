@@ -6,7 +6,7 @@
 , "linker-flavor": "ld"
 , "llvm-target": "nvptx64-nvidia-cuda"
 , "max-atomic-width": 0
-, "no-use-aliases-merge-functions": true
+, "merge-functions": "aliases"
 , "obj-is-bitcode": true
 , "os": "cuda"
 , "panic-strategy": "abort"
