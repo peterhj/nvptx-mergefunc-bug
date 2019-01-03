@@ -27,3 +27,9 @@ following error (I am using `ptxas` from CUDA 9.2):
     ptxas fatal   : Ptx assembly aborted due to errors
 
 Running `ptxas -arch sm_35 -o nocore-ok.o nocore-nomergefunc-ok.ptx` succeeds without error.
+
+### todo
+
+Running llc:
+
+    llc -march=nvptx64 -mcpu=sm_35 -O3 -o=minimal-llc.s minimal.ll
